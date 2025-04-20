@@ -10,8 +10,10 @@ Este proyecto implementa un sistema de gestión de torneos de eSports
 utilizando UML para el modelado y Java para la implementación.
 ## Diagramas UML
 ### Diagrama de Casos de Uso
-![Diagrama de casos de uso](diagrams/casos-uso.png)
+
+![Diagrama de casos de uso](diagrams/teamRegister-useCase.png)
 ### Diagrama de Clases
+
 ![Diagrama de clases](diagrams/clases.png)
 ## Estructura del Proyecto
 torneo-esports-uml/ ├── src/
@@ -87,4 +89,4 @@ Elegí la estructura de modelo DAO de programación orientada a objetos porque s
        - buscarUno(id int): E
 
 ## Conclusiones
-Con este proyecto he aprendido la importancia de diseñar la estructura y funcionamiento de un sistema o programa antes de construirlo, no solo evita posibles problemas que se enfrentarían construyéndolos directamente, sino que también agiliza el proceso de construcción al tener ya una idea clara de este. También es una forma de explorar diferentes formas de construir dichos sistemas o programas sin invertir demasiado tiempo en ello y elegir la que se considere más adecuada.
+Con este proyecto he aprendido la importancia de diseñar la estructura y funcionamiento de un sistema o programa antes de construirlo: no solo evita posibles problemas que se enfrentarían construyéndolos directamente, sino que también agiliza el proceso de construcción al tener ya una idea clara de este. También es una forma de explorar diferentes formas de construir dichos sistemas o programas sin invertir demasiado tiempo en ello y elegir la que se considere más adecuada.
