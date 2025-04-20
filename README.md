@@ -1,9 +1,11 @@
 # Sistema de Gestión de Torneos de eSports
 ## Autor
 Andrea Amado Lain
+
 Github: Andrie42
 ## Descripción del Proyecto
 https://github.com/Andrie42/torneo-esports-uml.git
+
 Este proyecto implementa un sistema de gestión de torneos de eSports
 utilizando UML para el modelado y Java para la implementación.
 ## Diagramas UML
@@ -24,6 +26,7 @@ torneo-esports-uml/ ├── src/
 ├── README.md
 ├── .gitignore
 ├── LICENSE
+
 ## Instalación y Ejecución
 1. Clonar el repositorio:
    `git clone https://github.com/andrie42/torneo-esports-uml.git`
@@ -34,6 +37,7 @@ Elegí la estructura de modelo DAO de programación orientada a objetos porque s
 
 1. Análisis del problema y requisitos del sistema:
     * ¿Quiénes son los actores que interactúan con el sistema?
+   
       Los actores que interactúan con este sistema son los administradores de los torneos de eSports. Aunque, dependiendo del enfoque que el cliente le diese a este sistema, también podrían interactuar con él los líderes de equipo, pero con unas acciones diferentes y mas restringidas.
 
     * ¿Cuáles son las acciones que cada actor puede realizar?
@@ -56,16 +60,16 @@ Elegí la estructura de modelo DAO de programación orientada a objetos porque s
         - Reportar una falta/infracción de otro equipo.
 
     * ¿Cómo se relacionan entre sí las entidades del sistema?
-      Un equipo solicita registrarse a un torneo, el administrador procede a aceptar o denegar su petición y, en caso de aceptarla, registra al equipo y sus jugadores y lo empareja con otro en una partida de ese torneo (los cuales el administrador ha creado con el sistema de gestión con anterioridad). Una vez terminada la partida, el administrador registra el resultado y empareja al equipo ganador con otro en una nueva partida de la siguiente fase del torneo. Este último proceso se repite hasta que queda un solo equipo ganador del torneo.
-2. Identificación de los casos de uso y elaboración del diagrama
 
-    Se puede consultar el diagrama de casos de uso aquí: ![Diagrama de casos de uso](diagrams/casos-uso.png)
+      Un equipo solicita registrarse a un torneo, el administrador procede a aceptar o denegar su petición y, en caso de aceptarla, registra al equipo y sus jugadores y lo empareja con otro en una partida de ese torneo (los cuales el administrador ha creado con el sistema de gestión con anterioridad). Una vez terminada la partida, el administrador registra el resultado y empareja al equipo ganador con otro en una nueva partida de la siguiente fase del torneo. Este último proceso se repite hasta que queda un solo equipo ganador del torneo.
+
+2. Identificación de los casos de uso y elaboración del diagrama
     Gestión de equipos y jugadores:
     - Registrar equipo: tal y como se muestra en el diagrama, para realizar esta acción, primero se comprueba la lista de equipos para cerciorarse de que ese equipo no está ya registrado (o existe otro equipo con el mismo nombre).
     - Añadir jugadores a un equipo: al igual que con la acción de registrar un equipo, antes de registrar un jugador se comprueba que no esté registrado todavía y se haya duplicado la petición de registro por algún error. También se comprueba si el equipo al que se está registrando existe en el sistema. Antes de realizar esta acción, se debe haber registrado algún equipo (como se indica en el diagrama con la flecha de <<include>>), ya que no se puede registrar un jugador en un equipo si no hay ningún equipo registrado.
     - Consultar lista de equipos y jugadores: aunque en un principio podría pensarse que para realizar esta acción primero se deberían registrar equipos y jugadores, no es del todo necesario, ya que se puede mostrar la lista vacía de jugadores y equipos (podría darse el caso en el que un administrador quiera comprobar si un torneo o partida está vacío, de darse así, podría mostrarse un mensaje en el sistema tipo “No se han registrado jugadores/equipos en este torneo/partida”).
+
 3. Identificación de clases y relaciones
-   Se puede consultar el diagrama de clases aquí: ![Diagrama de clases](diagrams/clases.png)
    En el caso de uso tratado anteriormente, tenemos las siguientes clases principales
    * Entidades:
      - Jugador: con los atributos id (integer), nombre (String), apellidos (String), sexo (String) y nacionalidad (String); y con los métodos estandar de una clase entidad (getters y setters, toString, hashCode y equals).
@@ -81,9 +85,6 @@ Elegí la estructura de modelo DAO de programación orientada a objetos porque s
        - agregarUno(E): boolean
        - eliminarUno(id int): boolean
        - buscarUno(id int): E
-
-
-
 
 ## Conclusiones
 Con este proyecto he aprendido la importancia de diseñar la estructura y funcionamiento de un sistema o programa antes de construirlo, no solo evita posibles problemas que se enfrentarían construyéndolos directamente, sino que también agiliza el proceso de construcción al tener ya una idea clara de este. También es una forma de explorar diferentes formas de construir dichos sistemas o programas sin invertir demasiado tiempo en ello y elegir la que se considere más adecuada.
