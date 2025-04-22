@@ -23,7 +23,7 @@ torneo-esports-uml/ ├── src/
 │ │ ├── vista/
 │ │ ├── Main.java
 ├── diagrams/
-│ ├── casos-uso.png
+│ ├── teamRegister-useCase.png
 │ ├── clases.png
 ├── README.md
 ├── .gitignore
