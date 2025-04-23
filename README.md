@@ -38,6 +38,7 @@ torneo-esports-uml/ ├── src/
 Elegí la estructura de modelo DAO de programación orientada a objetos porque se trata de una estructura con la que estoy familiarizada, la cual facilita la organización y la ampliación del sistema con más métodos y clases. A continuación una explicación más detallada del diseño:
 
 1. Análisis del problema y requisitos del sistema:
+
     * ¿Quiénes son los actores que interactúan con el sistema?
    
       Los actores que interactúan con este sistema son los administradores de los torneos de eSports. Aunque, dependiendo del enfoque que el cliente le diese a este sistema, también podrían interactuar con él los líderes de equipo, pero con unas acciones diferentes y mas restringidas.
@@ -65,13 +66,15 @@ Elegí la estructura de modelo DAO de programación orientada a objetos porque s
 
       Un equipo solicita registrarse a un torneo, el administrador procede a aceptar o denegar su petición y, en caso de aceptarla, registra al equipo y sus jugadores y lo empareja con otro en una partida de ese torneo (los cuales el administrador ha creado con el sistema de gestión con anterioridad). Una vez terminada la partida, el administrador registra el resultado y empareja al equipo ganador con otro en una nueva partida de la siguiente fase del torneo. Este último proceso se repite hasta que queda un solo equipo ganador del torneo.
 
-2. Identificación de los casos de uso y elaboración del diagrama
+2. Identificación de los casos de uso y elaboración del diagrama:
+
     Gestión de equipos y jugadores:
     - Registrar equipo: tal y como se muestra en el diagrama, para realizar esta acción, primero se comprueba la lista de equipos para cerciorarse de que ese equipo no está ya registrado (o existe otro equipo con el mismo nombre).
     - Añadir jugadores a un equipo: al igual que con la acción de registrar un equipo, antes de registrar un jugador se comprueba que no esté registrado todavía y se haya duplicado la petición de registro por algún error. También se comprueba si el equipo al que se está registrando existe en el sistema. Antes de realizar esta acción, se debe haber registrado algún equipo (como se indica en el diagrama con la flecha 'include'), ya que no se puede registrar un jugador en un equipo si no hay ningún equipo registrado.
     - Consultar lista de equipos y jugadores: aunque en un principio podría pensarse que para realizar esta acción primero se deberían registrar equipos y jugadores, no es del todo necesario, ya que se puede mostrar la lista vacía de jugadores y equipos (podría darse el caso en el que un administrador quiera comprobar si un torneo o partida está vacío, de darse así, podría mostrarse un mensaje en el sistema tipo “No se han registrado jugadores/equipos en este torneo/partida”). Para una mayor modularidad, esta acción deriva en otras dos, consultar lista de jugadores y consultar lista de equipos, que extienden de la acción padre 'Consultar lista de equipos y jugadores'(y, en Java, heredan los métodos que tienen en común de la clase padre). Esta división también permite ahorrar procesos cuando solo se necesita realizar una de las acciones (por ejemplo, cuando se quiere registrar un equipo, antes de ello solo se necesita consultar el listado de equipos).
 
-3. Identificación de clases y relaciones
+3. Identificación de clases y relaciones:
+
    En el caso de uso tratado anteriormente, tenemos las siguientes clases principales
    * Entidades:
      - Jugador: con los atributos id (integer), nombre (String), apellidos (String), sexo (String) y nacionalidad (String); y con los métodos estandar de una clase entidad (getters y setters, toString, hashCode y equals).
